@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* binary search pseudocode
+        -this function accepts a sorted array and a value
+        -create a left pointer at the start of the array, and a right pointer at the end of the array
+        -while the left pointer comes before the right pointer:
+            -create a pointer in the middle
+            -if you find the value you want, return the index
+            -if the value is too small, move the left pointer up
+            -if the value is too large, move the right pointer down
+        -if you never find the value, return -1 */
+
+        // function binarySearch(arr, val){
+        //     let leftPointer = arr[0];
+        //     let rightPointer = arr.length-1;
+        //     let currentPointer = null;
+        //     while (leftPointer < rightPointer){
+        //         currentPointer = leftPointer + rightPointer /2;
+        //         if (val === arr[currentPointer]){
+        //             return currentPointer;
+        //         }
+        //         if (val < arr[currentPointer]){
+        //             leftPointer++;
+        //         }
+        //         if(val > arr[currentPointer]){
+        //             rightPointer--;
+        //         }
+        //     }
+        //     if(!val){
+        //         return -1;
+        //     }
+        // }
+
+        function binarySearch(arr, elem){
+            let start = 0;
+            let end = arr.length-1;
+            let middle = Math.floor((start + end) / 2);
+            while(arr[middle] !== elem && start <= end) {
+                if(elem < arr[middle]){
+                    end = middle - 1;
+                }else{
+                    start = middle + 1;
+                }
+                middle = Math.floor((start + end) /2);
+            }
+            if(arr[middle] === elem){
+                return middle;
+            }
+            return -1;
+        }
+        
+    </script>
+</body>
+</html>
