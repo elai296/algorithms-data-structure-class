@@ -12,6 +12,22 @@
         - start an inner loop with a variable called j from the beginning until i-1
         - if arr[j] is greater than arr[j+1], swap those two values!
         - return the sorted array
+
+        Many sorting algorithms involve some type of swapping functonality (e.g. swapping to numbers to puth them in order)
+        Examples:
+
+        ES5
+        function swap(arr, idxl, idx2){
+            var temp = arr[idxl];
+            arr[idxl] = arr[idx2];
+            arr[idx2] = temp;
+        }
+
+        ES2015
+        const swap (arr, idxl, idx2) => {
+            [arr[idxl], arr[idx2]] = [arr[idx2], arr[idxl]];
+        }
+
         */
 
         function bubbleSort(arr){
@@ -30,6 +46,8 @@
             }
             return arr;
         }
+
+        // big O notation is O(n)
     </script>
 </body>
 </html>

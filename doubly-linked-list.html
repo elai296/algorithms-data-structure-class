@@ -7,6 +7,17 @@
 </head>
 <body>
     <script>
+
+        /*Node
+        -val
+        -next
+        -prev
+
+        DoublyLinkedList
+        -head
+        -tail
+        -length
+        */
         class Node{
             constructor(val){
                 this.val = val;
@@ -21,7 +32,28 @@
                 this.tail = null;
                 this.length = 0;
             }
+            push(val){
+                let newNode = new Node(val);
+                if(this.length===0){
+                    this.head = newNode;
+                    this.tail = newNode;
+                }else{
+                    this.tail.next = newNode;
+                    newNode.prev = this.tail;
+                    this.tail = newNode;
+                }
+                this.length ++;
+                return this;
+            }
         }
+
+        /* Pushing pseudocode
+        -create a new node with the value passed to the function
+        -if the head property is null set the head and the tail to be the newly created node
+        -if not, set the next property on the tail to be that node
+        - set the previous property on the newly created node to be the newly created node
+        - increment the length
+        - return the doubly linked list
     </script>
 </body>
 </html>
