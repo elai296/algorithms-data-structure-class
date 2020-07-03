@@ -20,7 +20,7 @@
                 - Once we exhaust one array, push in all remaining values from the other array
                 */
 
-        function sort(){
+        function merge(){
             let results = [];
             let i = 0;
             let j = 0;
@@ -43,6 +43,28 @@
             }
             return results;
         }
+
+        /* mergeSort Pseudocode 
+        - Break up the array into halves until you have arrays that are empty or have one element
+        - Once you have smaller sorted arrays, merge those arrays with other sorted arrays until you are back at the full length of the array
+        */
+
+        function mergeSort(arr){
+            if(arr.length <=1) return arr;
+            let mid = Math.floor(arr.length/2);
+            let left = mergeSort(arr.slice(0,mid));
+            let right = mergeSort(arr.slice(mid));
+            return merge(left, right);
+        }
+
+        /* Big O of merge sort
+
+        time complexity (best) = O(n log n)
+        time complexity (average) = O(n log n)
+        time complexity (worst) = O(n log n)
+        space complexity = O(n)
+
+        */
     </script>
     
 </body>
