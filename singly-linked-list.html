@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singly Linked Lists</title>
+</head>
+<body>
+    <script>
+        /* Singly Linked Lists are connected one node to the next node */
+        class Node {
+            constructor(val){
+                this.val = val;
+                this.next = null;
+            }
+        }
+
+        class SinglyLinkedList {
+            constructor() {
+                this.head = null;
+                this.tail = null;
+                this.length = 0;
+            }
+            push(val){
+                const newNode = newNode(val);
+                if(this.head){ //this code only run if it's empty
+                    this.head = newNode;
+                    this.tail = this.head; //tail point at the new node 
+                }else{
+                    this.tail.next = newNode;
+                    this.tail = newNode;
+                }
+                this.length++;
+                return this;
+            }
+        }
+
+        const list = new SinglyLInkedList()
+        list.push('HELLO');
+
+
+        /*Push pseudocode
+        - This function should accept a value
+        - Create a new node using teh value passed to the function
+        - if there is no head property on the list, set the head  and tail to be the newly created node
+        - Otherwise set the next property on the tail to be the new node adn set the tail property on the list to be the newly created node
+        - Increment the length by one
+        - Return the linked list
+         */
+    
+    </script>
+</body>
+</html>
