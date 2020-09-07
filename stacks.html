@@ -7,6 +7,58 @@
 </head>
 <body>
     <script>
+        /* what is stack? abstract data structure 
+        - a LIFO data structure!
+        - the last element added to the stack will be the first element removed from the stack
+        - How is it used? Think about a stack of plates, or a stack of markers, or a stack of ...anything.
+        - As you pile it up the last thing(or the topmost thing) is what gets removed first
+        - we saw this before, in the recursion call stack
+        - What stacks are used for? 
+                - Managing function invocations
+                - undo / redo e.g. when you use photoshop
+                - Routing (the history object) is treated like  a stack. e.g. in React uses it
+
+        - there is more than one way to implementing a stack
+        */
+
+        //array implementation 
+        //use push and pop to create stack
+        let stack = [];
+        stack.push("google");
+        stack.push("instagram");
+        stack.push("youtube");
+        ["google", "instagram", "youtube"]
+        stack.pop();
+
+        //another way to create stack
+        stack.unshift("create new file")
+        stack.unshif("resized file")
+        stack.unshif("cloned out wrinkle")
+        ["cloned out wrinkle", "resized file", "create new file"]
+        stack.shift();
+        stack.shift();
+        stack.shift();
+        
+        /* which way is more efficient? shift or push? shift is less efficient because you change the index, this changes the position number of the item in the array
+        
+        if you have a lot of data, you use linked list. it's more efficient
+
+        we're not accessing the data based on index, so it's better to use linked list
+
+        */
+
+        //Linked list implementation
+        /* Pushing pseudocode
+        - the function should accept a value
+        - create a new node with that value
+        - if there are no nodes in the stack, set the first and last property to be the new created node
+        - if there is at least one node, create a variable that stores the currrent first property on the stack
+        - reset the first property to be the newly created node
+        - set the next property on the node to be the previously created variable 
+        - increment the size of the stack by 1
+        */
+
+
         
     </script>
 </body>
